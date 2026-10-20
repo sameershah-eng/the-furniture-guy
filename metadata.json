@@ -1,0 +1,8 @@
+{
+  "name": "The Furniture Guy - King of Bling",
+  "description": "Luxury bespoke glam, mirrored, crushed diamond, and silver-finish furniture and home décor retailer based in the UK.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

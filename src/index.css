@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: "Cormorant Garamond", Georgia, serif;
+    --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+    
+    --bg-base: #FBF9F6;
+    --surface: #FFFFFF;
+    --border-subtle: #EEE8E1;
+    --text-primary: #1C1B1F;
+    --text-secondary: #6B6670;
+    
+    --champagne-rose: linear-gradient(135deg, #E8D3B9 0%, #D9A89A 50%, #C9A27E 100%);
+    --silver-shimmer: linear-gradient(120deg, #F5F5F7 0%, #DCDDE1 50%, #F5F5F7 100%);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom shimmer sweep animation */
+@keyframes shimmerSweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer-sweep {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmerSweep 3s infinite ease-in-out;
+}
+
+/* Shimmer gradient text */
+.text-champagne-gradient {
+  background: linear-gradient(135deg, #A87954 0%, #C99672 50%, #8C5E3D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-champagne-gold {
+  background: linear-gradient(135deg, #E8D3B9 0%, #D9A89A 50%, #C9A27E 100%);
+}
+
+.border-champagne-gold {
+  border-image: linear-gradient(135deg, #E8D3B9 0%, #D9A89A 50%, #C9A27E 100%) 1;
+}
+
+/* Client photo slight contrast enhancement for luxury crispness */
+.client-photo-treatment {
+  filter: contrast(1.03) saturate(1.05);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF9F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9C3B0;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A27E;
+}
+
+/* Hide scrollbars for carousel when needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
